@@ -1,7 +1,6 @@
 import React from "react";
 import { IReserva } from "../Interfaces/Reserva";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { FiEdit3 } from "react-icons/fi";
+
 
 
 
@@ -10,18 +9,7 @@ const CardSala: React.FC<IReserva> = (props: IReserva) => {
     //const formattedDataUso = props.dataUso instanceof Date ? props.dataUso.toLocaleDateString() : 'Data inválida';
     const formattedDataUso = new Date(props.dataUso).toLocaleDateString();
 
-    const deleteReserva = async () => {
-        console.log('ID da reserva:', props.id);
-        try {
-            await fetch(`http://localhost:3000/salas/${props.id}`, {
-                method: 'DELETE'
-            });
-            alert("Reserva excluída com sucesso!");
-            window.location.reload();
-        } catch (error) {
-            console.error("Erro ao excluir a reserva:", error);
-        }
-    };
+    
 return(
  
 
